@@ -93,6 +93,24 @@ console.log(1-1); // Subtraction
 console.log(1*1); // Multiplication
 console.log(1/1); // Division
 console.log(1%1); // Remainder
+
+// Functions
+function test() {
+  console.log("test");
+}
+test(); // output: "test"
+
+function test(text) {
+  console.log(text);
+}
+test("hello"); // output: "hello"
+
+function test(text) {
+  return text;
+}
+test("hello"); // output: nothing, instead:
+console.log(test("hello")); // output: "hello"
+
 ```
 
 **Scope object:**
