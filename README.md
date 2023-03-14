@@ -22,13 +22,11 @@ function stop() {} // Executed once when the application is stopped.
 
 # Events
 It is also possible to implement event listeners for selected browser events. The following events are supported by the editor:
-```js
-keydown
-keyup
-pointerdown
-pointerup
-pointermove
-```
+* keydown
+* keyup
+* pointerdown
+* pointerup
+* pointermove
 
 # Script variables
 Certain application components are accessible in the scope of scripts as variables:
