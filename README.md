@@ -2,8 +2,7 @@
 This is the official MarsX scripting documentation. <br /> MarsX uses Javascript to create game logic.
 
 
-Websites recommended to learn JavaScript at:
-
+Websites recommended to learn JavaScript at:<br />
   https://www.w3schools.com/js/ <br />
   https://www.freecodecamp.org/ <br />
   https://www.learn-js.org/ <br />
