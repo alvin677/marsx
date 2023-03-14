@@ -11,6 +11,9 @@ Websites recommended to learn JavaScript at:
   
   https://www.learn-js.org/ 
 
+MarsX is using Three.js and a modified version of their editor.
+Everything possible with Three.js is possible in the MarsX editor.
+
 # Lifecycle methods
 ```js
 function update(event) {} // Executed right before a frame is going to be rendered. Its primary purpose is to update the state of the 3D object which owns the script. The method has an event parameter which holds a time and delta property. time represents the elapsed time in milliseconds and delta represents the time between two frames in milliseconds.
