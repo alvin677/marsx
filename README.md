@@ -43,6 +43,31 @@ The ```this``` reference can be used to refer to the 3D object which owns the sc
 # Scripting Guide
 
 It is recommended to have the Developer Console open when working in a project. <br /> There are multiple ways to open the console: `CTRL + SHIFT + I`, `CTRL + SHIFT + J` or by pressing `F12`
+**A list of useful Javascript keywords:**
+```js
+// Creating variables
+let integerVariable = 10; // integer (add decimal to make float)
+var boolVariable = true; // boolean
+const stringVariable = "string"; // string
+
+// Loops
+for (let i = 0; i < 10; i++) {} // Loop will run 10 times, value 'i' will increase by 1 each time
+
+// Statements
+if (boolVariable) {console.log("true");}
+if (10 > 5) {console.log("10 is greater than 5");}
+
+switch (2) { // Put expression where the '2' is. (could be a variable)
+case 1:
+  console.log(1);
+  break;
+case 2:
+  console.log("this piece will execute");
+  break
+default:
+  console.alert("Hello World!");
+}
+```
 
 **Scope object:**
 ```js
