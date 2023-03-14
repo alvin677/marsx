@@ -47,7 +47,7 @@ Scope object:
 let cube = scene.getObjectByName('Box'); // Object scoping in the scene
 ```
 
-Sleep function:
+Sleep functions:
 ```js
 
 // Sync sleep function
@@ -57,9 +57,22 @@ function sleepSync(ms) {
   Atomics.wait(intArray, 0, 0, ms);
 }
 
+sleepSync(2000); // example
+
 
 // Async sleep function
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+await sleep(2000); // example
+```
+
+User input:
+```js
+function init( event ) {
+  window.addEventListener('keypress', (event) => {
+    console.log(event.key);
+  }			  
 }
 ```
