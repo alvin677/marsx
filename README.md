@@ -187,7 +187,9 @@ scene.remove(scene.getObjectByName('Box'));
 
 **Log objects:**
 ```js
-console.log(scene); // This one is very basic
+for (let i = 0; i < scene.children.length; i++) {
+  console.log(scene.children[i]); // Logs every object created
+}
 ```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
