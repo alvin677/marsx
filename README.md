@@ -1,5 +1,5 @@
 # MarsX
-This is the official MarsX scripting documentation. <br /> MarsX uses Javascript to create game logic.
+This is the official MarsX scripting documentation. <br /> MarsX uses Javascript to create game logic. <br /> You may ask questions to the community on MarsF: https://ullblocks.jonhosting.com/forums/
 
 
 **Websites recommended to learn JavaScript at:**
