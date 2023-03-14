@@ -65,6 +65,8 @@ for (let i = 0; i < 10; i++) {} // Loop will run 10 times, value 'i' will increa
 // Statements
 if (boolVariable) {console.log("true");}
 if (10 > 5) {console.log("10 is greater than 5");}
+else if ("word" == "word") {}
+else {console.log("else");}
 
 switch (2) { // Put expression where the '2' is. (could be a variable)
 case 1:
