@@ -195,4 +195,4 @@ for (let i = 0; i < scene.children.length; i++) {
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
 
-Contact me on Discord with suggestions: *Cedric#0591*
+Contact me on Discord with suggestions (or open an issue): *Cedric#0591*
