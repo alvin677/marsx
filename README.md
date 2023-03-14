@@ -119,7 +119,13 @@ break;
 
 // Try catch (useful when you don't want your program to stop running if it encounters an error)
 try {console.log("success");} // Tries to execute the code, if it fails, then code in the 'catch' will be executed.
-catch (error) {console.log(error);} // Code inside 'try' somehow failed.
+catch (error) {console.log(error);} // Code inside 'try' somehow failed. (put nothing inside {} if you don't want it to do anything on fail)
+
+// Array
+let array = [100, 50, 20];
+console.log(array[1]); // output: 50, index starts at 0
+
+for (let i = 0; i < array.length; i++) {console.log(array[i]); // output: 100 50 20
 ```
 
 **Scope object:**
