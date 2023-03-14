@@ -59,8 +59,9 @@ console.log(integerVariable); // output: 10
 console.log(integerVariable + 10) // output: 20
 console.alert("warning");
 
-// Loops
+// Loops (the 'i' stands for index)
 for (let i = 0; i < 10; i++) {} // Loop will run 10 times, value 'i' will increase by 1 each time
+while (true) {} // While loops tend to freeze the application as they execute as fast and much as they can.
 
 // Statements
 if (boolVariable) {console.log("true");}
