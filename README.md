@@ -91,10 +91,17 @@ camera.position.y = this.position.y;
 camera.position.z = this.position.z;
 camera.position.y += 20;
 
-// OR
+// or
 
 camera.position.copy(this.position)
 camera.position.y += 20;
+```
+
+Delete objects:
+```js
+scene.remove(this);
+// or
+scene.remove(scene.getObjectByName('Box'));
 ```
 
 Contact me on Discord: Cedric#0591
