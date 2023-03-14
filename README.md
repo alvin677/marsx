@@ -51,13 +51,13 @@ Sleep functions:
 ```js
 
 // Sync sleep function
-function sleepSync(ms) {
-  const sab = new SharedArrayBuffer(4);
-  const intArray = new Int32Array(sab);
-  Atomics.wait(intArray, 0, 0, ms);
+function sleep(ms) {
+  var start = new Date().getTime(), expire = start + ms;
+  while (new Date().getTime() < expire) {}
+  return;
 }
 
-sleepSync(2000); // example
+sleep(2000); // example
 
 
 // Async sleep function
