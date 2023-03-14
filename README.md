@@ -38,5 +38,4 @@ camera // A reference to the application's camera.
 
 Miscellaneous
 Code outside of lifecycle and event listeners is immediately executed when the script is loaded.
-The ```js
-this``` reference can be used to refer to the 3D object which owns the script.
+The ```this``` reference can be used to refer to the 3D object which owns the script.
