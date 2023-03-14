@@ -12,7 +12,10 @@ Websites recommended to learn JavaScript at:
   https://www.learn-js.org/ 
 
 MarsX is using Three.js and a modified version of their editor.
+
 Everything possible with Three.js is possible in the MarsX editor.
+
+Credit to the Three.js community.
 
 # Lifecycle methods
 ```js
