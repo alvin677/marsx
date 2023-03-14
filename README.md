@@ -30,10 +30,10 @@ It is also possible to implement event listeners for selected browser events. Th
 
 # Script variables
 Certain application components are accessible in the scope of scripts as variables:
-`player` A reference to the application player (a wrapper component which executes the editor application).
-`renderer` A reference to the renderer.
-`scene` A reference to the scene graph.
-`camera` A reference to the application's camera.
+`player` A reference to the application player (a wrapper component which executes the editor application). <br />
+`renderer` A reference to the renderer. <br />
+`scene` A reference to the scene graph. <br /> 
+`camera` A reference to the application's camera. <br />
 
 # Miscellaneous
 Code outside of lifecycle and event listeners is immediately executed when the script is loaded.
