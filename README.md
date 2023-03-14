@@ -128,6 +128,7 @@ console.log(array[1]); // output: 50, index starts at 0
 
 for (let i = 0; i < array.length; i++) {console.log(array[i]); // output: 100 50 20
 ```
+It is also recommended that you learn about JSON in Javascript, structure and how to use it.
 
 **Scope object:**
 ```js
