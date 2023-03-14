@@ -42,7 +42,7 @@ The ```this``` reference can be used to refer to the 3D object which owns the sc
 <br /><br /><br /><br /><br />
 # Scripting Guide
 
-It is recommended to have the Developer Console open when working in a project. There are multiple ways to open the console: `CTRL + SHIFT + I`, `CTRL + SHIFT + J` or by pressing `F12`
+It is recommended to have the Developer Console open when working in a project. <br /> There are multiple ways to open the console: `CTRL + SHIFT + I`, `CTRL + SHIFT + J` or by pressing `F12`
 
 **Scope object:**
 ```js
