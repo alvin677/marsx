@@ -111,6 +111,9 @@ function test(text) {
 test("hello"); // output: nothing, instead:
 console.log(test("hello")); // output: "hello"
 
+// Stop code
+return
+break
 ```
 
 **Scope object:**
