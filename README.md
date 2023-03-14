@@ -1,5 +1,5 @@
 # MarsX
-This is the official MarsX scripting documentation. <br /> MarsX uses Javascript to create game logic. <br /> You may ask questions to the community on MarsF: https://ullblocks.jonhosting.com/forums/
+This is the official MarsX scripting documentation. <br /> MarsX uses Javascript to create game logic.
 
 
 **Websites recommended to learn JavaScript at:**
@@ -104,6 +104,7 @@ scene.remove(scene.getObjectByName('Box'));
 console.log(scene); // This one is very basic
 ```
 <br /><br /><br />
-**Additional Three.js documentation can be found at: https://threejs.org/docs/**
+**Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
+**Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
 
 Contact me on Discord with suggestions: *Cedric#0591*
