@@ -56,7 +56,7 @@ It is recommended to have the Developer Console open when working in a project. 
 let cube = scene.getObjectByName('Box'); // Object scoping in the scene
 ```
 
-Sleep functions:
+* Sleep functions:
 ```js
 
 // Sync sleep function
@@ -77,7 +77,7 @@ function sleep(ms) {
 await sleep(2000); // example
 ```
 
-User input:
+* User input:
 ```js
 function init( event ) {
   window.addEventListener('keypress', (event) => {
@@ -86,7 +86,7 @@ function init( event ) {
 }
 ```
 
-Moving camera:
+* Moving camera:
 ```js
 camera.position.x = this.position.x;
 camera.position.y = this.position.y;
@@ -99,7 +99,7 @@ camera.position.copy(this.position)
 camera.position.y += 20;
 ```
 
-Delete objects:
+* Delete objects:
 ```js
 scene.remove(this);
 // or
