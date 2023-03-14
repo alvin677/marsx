@@ -1,13 +1,12 @@
 # MarsX
-MarsX scripting documentation (javascript)
+MarsX scripting documentation.
+MarsX uses javascript.
 
 
 Websites recommended to learn JavaScript at:
   https://www.w3schools.com/js/
   https://www.freecodecamp.org/
   https://www.learn-js.org/
-
-
 
 # Lifecycle methods
 ```js
@@ -39,3 +38,9 @@ camera // A reference to the application's camera.
 # Miscellaneous
 Code outside of lifecycle and event listeners is immediately executed when the script is loaded.
 The ```this``` reference can be used to refer to the 3D object which owns the script.
+
+
+# Scripting Guide
+```js
+let cube = scene.getObjectByName('Box'); // Object scoping in the scene
+```
