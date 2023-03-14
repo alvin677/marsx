@@ -94,6 +94,7 @@ console.log(1*1); // Multiplication
 console.log(1/1); // Division
 console.log(1%1); // Remainder
 
+
 // Functions
 function test() {
   console.log("test");
@@ -111,9 +112,14 @@ function test(text) {
 test("hello"); // output: nothing, instead:
 console.log(test("hello")); // output: "hello"
 
+
 // Stop code
-return
-break
+return;
+break;
+
+// Try catch (useful when you don't want your program to stop running if it encounters an error)
+try {console.log("success");} // Tries to execute the code, if it fails, then code in the 'catch' will be executed.
+catch (error) {console.log(error);} // Code inside 'try' somehow failed.
 ```
 
 **Scope object:**
