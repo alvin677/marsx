@@ -76,3 +76,11 @@ function init( event ) {
   })
 }
 ```
+
+Moving camera:
+```js
+camera.position.x = this.position.x;
+camera.position.y = this.position.y;
+camera.position.z = this.position.z;
+camera.position.y += 20;
+```
