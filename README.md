@@ -84,7 +84,7 @@ integerVariable.toString(); // Convert int to string
 // Math
 Math.floor(Math.random() * 100); // Retrieve random number between 0 and 100 without any decimals
 Math.PI // Pi (3.1415..)
-Math.sin, Math.tan, Math.cos;
+Math.sin, Math.tan, Math.cos, Math.asin, Math.atan, Math.acos; // Trigonometry
 ```
 
 **Scope object:**
