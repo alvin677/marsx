@@ -4,9 +4,10 @@ MarsX uses javascript.
 
 
 Websites recommended to learn JavaScript at:
-  https://www.w3schools.com/js/ \n
-  https://www.freecodecamp.org/ \n
-  https://www.learn-js.org/ \n
+  https://www.w3schools.com/js/ 
+
+  https://www.freecodecamp.org/ 
+  https://www.learn-js.org/ 
 
 # Lifecycle methods
 ```js
