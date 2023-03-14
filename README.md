@@ -87,7 +87,7 @@ camera.position.y = this.position.y;
 camera.position.z = this.position.z;
 camera.position.y += 20;
 
-//OR
+// OR
 
 camera.position.copy(this.position)
 camera.position.y += 20;
