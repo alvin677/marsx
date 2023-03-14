@@ -106,4 +106,5 @@ scene.remove(this);
 scene.remove(scene.getObjectByName('Box'));
 ```
 
+Additional Three.js documentation can be found at: https://threejs.org/docs/
 Contact me on Discord: Cedric#0591
