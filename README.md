@@ -41,6 +41,25 @@ The ```this``` reference can be used to refer to the 3D object which owns the sc
 
 
 # Scripting Guide
+
+Scope object:
 ```js
 let cube = scene.getObjectByName('Box'); // Object scoping in the scene
+```
+
+Sleep function:
+```js
+
+// Sync sleep function
+function sleepSync(ms) {
+  const sab = new SharedArrayBuffer(4);
+  const intArray = new Int32Array(sab);
+  Atomics.wait(intArray, 0, 0, ms);
+}
+
+
+// Async sleep function
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 ```
