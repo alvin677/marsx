@@ -48,12 +48,12 @@ The ```this``` reference can be used to refer to the 3D object which owns the sc
 
 It is recommended to have the Developer Console open when working in a project. There are multiple ways to open the console: `CTRL + SHIFT + I`, `CTRL + SHIFT + J` or by pressing `F12`
 
-* Scope object:
+** Scope object: **
 ```js
 let cube = scene.getObjectByName('Box'); // Object scoping in the scene
 ```
 
-* Sleep functions:
+** Sleep functions: **
 ```js
 
 // Sync sleep function
@@ -74,7 +74,7 @@ function sleep(ms) {
 await sleep(2000); // example
 ```
 
-* User input:
+** User input: **
 ```js
 function init( event ) {
   window.addEventListener('keypress', (event) => {
@@ -83,7 +83,7 @@ function init( event ) {
 }
 ```
 
-* Moving camera:
+** Moving camera: **
 ```js
 camera.position.x = this.position.x;
 camera.position.y = this.position.y;
@@ -96,7 +96,7 @@ camera.position.copy(this.position)
 camera.position.y += 20;
 ```
 
-* Delete objects:
+** Delete objects: **
 ```js
 scene.remove(this);
 // or
