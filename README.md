@@ -195,6 +195,11 @@ for (let i = 0; i < scene.children.length; i++) {
   console.log(scene.children[i]); // Logs every object created
 }
 ```
+
+**Information about current object:**
+```js
+console.log(this); // Very simple, will output everything about the object that the script created on.
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
