@@ -1,6 +1,6 @@
 # MarsX
-MarsX scripting documentation.
-MarsX uses javascript.
+This is the official MarsX scripting documentation.
+MarsX uses javascript for logic.
 
 
 Websites recommended to learn JavaScript at:
