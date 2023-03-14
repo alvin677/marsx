@@ -165,7 +165,7 @@ function init( event ) {
 }
 ```
 
-**Moving camera:**
+**Moving camera or other objects:**
 ```js
 camera.position.x = this.position.x;
 camera.position.y = this.position.y;
@@ -174,8 +174,12 @@ camera.position.y += 20;
 
 // or
 
-camera.position.copy(this.position)
+camera.position.copy(this.position);
 camera.position.y += 20;
+
+// or
+
+camera.position.set(10, 10, 10);
 ```
 
 **Delete objects:**
