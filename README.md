@@ -5,9 +5,9 @@ MarsX uses Javascript to create game logic.
 
 Websites recommended to learn JavaScript at:
 
-  https://www.w3schools.com/js/ __
-  https://www.freecodecamp.org/ __
-  https://www.learn-js.org/ __
+  https://www.w3schools.com/js/ <br />
+  https://www.freecodecamp.org/ <br />
+  https://www.learn-js.org/ <br />
 
 MarsX is using Three.js and a modified version of their editor.
 Everything possible with Three.js is possible in the MarsX editor.
