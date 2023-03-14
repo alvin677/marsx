@@ -8,7 +8,7 @@ This is the official MarsX scripting documentation. MarsX uses Javascript to cre
   https://www.freecodecamp.org/ <br />
   https://www.learn-js.org/ <br />
 
-MarsX is using Three.js and a modified version of their editor.
+MarsX is using Three.js and our modified version of their editor.
 Everything possible with Three.js is possible in the MarsX editor.
 Credit to the Three.js community.
 
