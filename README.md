@@ -1,6 +1,6 @@
 # MarsX
 This is the official MarsX scripting documentation.
-MarsX uses javascript for logic.
+MarsX uses Javascript to create game logic.
 
 
 Websites recommended to learn JavaScript at:
