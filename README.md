@@ -73,6 +73,6 @@ User input:
 function init( event ) {
   window.addEventListener('keypress', (event) => {
     console.log(event.key);
-  }			  
+  })
 }
 ```
