@@ -76,6 +76,10 @@ case 2:
 default:
   console.alert("Hello World!");
 }
+
+// Datatype conversion
+parseInt(stringVariable); // Convert string to int
+integerVariable.toString(); // Convert int to string
 ```
 
 **Scope object:**
