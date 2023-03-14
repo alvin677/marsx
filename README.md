@@ -44,12 +44,20 @@ The ```this``` reference can be used to refer to the 3D object which owns the sc
 
 It is recommended to have the Developer Console open when working in a project. <br /> There are multiple ways to open the console: `CTRL + SHIFT + I`, `CTRL + SHIFT + J` or by pressing `F12`
 
-**A list of useful Javascript keywords:**
+**A list of useful Javascript keywords/code:**
 ```js
 // Creating variables
 let integerVariable = 10; // integer (add decimal to make float)
 var boolVariable = true; // boolean
 const stringVariable = "string"; // string
+integerVariable += 10; // add 10 to the variable
+integerVariable -= 10; // remove 10 from the variable
+stringVariable += 'c'; // This would have added the character 'c', however, the variable is a constant (use let/var instead).
+
+// Debugging/logging
+console.log(integerVariable); // output: 10
+console.log(integerVariable + 10) // output: 20
+console.alert("warning");
 
 // Loops
 for (let i = 0; i < 10; i++) {} // Loop will run 10 times, value 'i' will increase by 1 each time
