@@ -39,7 +39,7 @@ Certain application components are accessible in the scope of scripts as variabl
 Code outside of lifecycle and event listeners is immediately executed when the script is loaded.
 The ```this``` reference can be used to refer to the 3D object which owns the script.
 
-
+<br /><br /><br />
 # Scripting Guide
 
 It is recommended to have the Developer Console open when working in a project. There are multiple ways to open the console: `CTRL + SHIFT + I`, `CTRL + SHIFT + J` or by pressing `F12`
