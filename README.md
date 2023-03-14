@@ -98,6 +98,11 @@ scene.remove(this);
 // or
 scene.remove(scene.getObjectByName('Box'));
 ```
+
+**Log objects:**
+```js
+console.log(scene); // This one is very basic
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/**
 
