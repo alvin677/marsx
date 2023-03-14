@@ -7,7 +7,8 @@ Websites recommended to learn JavaScript at:
 
   https://www.w3schools.com/js/ 
 
-  https://www.freecodecamp.org/ 
+  https://www.freecodecamp.org/
+  
   https://www.learn-js.org/ 
 
 # Lifecycle methods
