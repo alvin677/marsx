@@ -245,6 +245,15 @@ let objectClone = this.clone(); // Define clone variable as a clone of 'this' ob
 objectClone.position.copy(this.position); // Set position to 'this' position
 scene.add(objectClone); // Add clone to the scene
 ```
+
+**Change object color:**
+```js
+this.material.color.setRGB(0, 255, 0);
+
+// or
+
+this.material.color.g = 255;
+```
 # Examples
 **Smooth movement example, try it on a cube, capsule or similar:**
 ```js
