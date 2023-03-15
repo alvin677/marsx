@@ -142,9 +142,11 @@ let example2 = 'this is a string';
 let example3 = `this is also a string`;
 
 let age = 30;
-console.log(`Age is: ${age}`); // Using the ` to make strings, you can easily pass in variables.
+console.log(`Age is: ${age}`); // Using the ` to make strings, you can easily pass in variables
 // instead of
 console.log("Age is: "+age);
+
+console.log("\n"); // The \n makes a 'new line', it can be put anywhere in a string
 ```
 It is also recommended that you learn about JSON in Javascript, structure and how to use it.
 
