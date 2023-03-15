@@ -320,6 +320,15 @@ function update( event ) { // Main loop
 	camera.rotation.set(-0.75, 0, 0); // Set correct camera rotation
 }
 ```
+
+**Velocity:**
+```js
+let yVelocity = 0; // Define velocity variable
+
+function update(event) {
+yVelocity -= 0.01; // Add negative velocity, cause object to fall
+this.position.y += yVelocity; // Apply/update velocity to object's position (y)
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
