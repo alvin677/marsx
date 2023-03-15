@@ -127,6 +127,24 @@ let array = [100, 50, 20];
 console.log(array[1]); // output: 50, index starts at 0
 
 for (let i = 0; i < array.length; i++) {console.log(array[i]); // output: 100 50 20
+
+// Comments
+
+// This is a comment
+/* This is
+a multiline
+comment*/
+
+// String
+
+let example = "this is a string";
+let example2 = 'this is a string';
+let example3 = `this is also a string`;
+
+let age = 30;
+console.log(`Age is: ${age}`); // Using the ` to make strings, you can easily pass in variables.
+// instead of
+console.log("Age is: "+age);
 ```
 It is also recommended that you learn about JSON in Javascript, structure and how to use it.
 
@@ -200,6 +218,8 @@ for (let i = 0; i < scene.children.length; i++) {
 ```js
 console.log(this); // Very simple, will output everything about the object that the script created on.
 ```
+
+# Examples
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
