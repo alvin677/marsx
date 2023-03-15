@@ -165,7 +165,7 @@ It is also recommended that you learn about JSON in Javascript, structure and ho
 
 **Scope object:**
 ```js
-let cube = scene.getObjectByName('Box'); // Object scoping in the scene
+let cube = scene.getObjectByName('Box'); // Object scoping in the scene, target another object
 ```
 
 **Sleep functions:**
