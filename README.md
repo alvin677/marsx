@@ -72,6 +72,8 @@ else {console.log("else");}
 
 if (variable1 != variable2) {} // != stands for 'not equal to'
 if (variable1 >= variable2) {} // >= or <= stands for 'greater or equal to' or 'less or equal to'
+if (variable1 || variable2) {} // || stands for 'or'
+if variable1 && variable2) {} // && stands for 'and'
 
 switch (2) { // Put expression where the '2' is. (could be a variable)
 case 1:
