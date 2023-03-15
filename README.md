@@ -101,6 +101,7 @@ console.log(1*1); // Multiplication
 console.log(1/1); // Division
 console.log(1%1); // Remainder
 
+eval(10+20); // output: 30, eval() can be used to calculate any expression
 
 // Functions
 function test() {
