@@ -53,6 +53,7 @@ const stringVariable = "string"; // string
 integerVariable += 10; // add 10 to the variable
 integerVariable -= 10; // remove 10 from the variable
 stringVariable += 'c'; // This would have added the character 'c', however, the variable is a constant (use let/var instead).
+boolVariable = !boolVariable; // This will switch the bool from true to false, and false to true whenever executed. ! stands for 'not'
 
 // Debugging/logging
 console.log(integerVariable); // output: 10
@@ -68,6 +69,9 @@ if (boolVariable) {console.log("true");}
 if (10 > 5) {console.log("10 is greater than 5");}
 else if ("word" == "word") {}
 else {console.log("else");}
+
+if (variable1 != variable2) {} // != stands for 'not equal to'
+if (variable1 >= variable2) {} // >= or <= stands for 'greater or equal to' or 'less or equal to'
 
 switch (2) { // Put expression where the '2' is. (could be a variable)
 case 1:
