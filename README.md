@@ -173,8 +173,8 @@ let cube = scene.getObjectByName('Box'); // Object scoping in the scene, target 
 
 // Sync sleep function
 function sleep(ms) {
-  var start = new Date().getTime(), expire = start + ms;
-  while (new Date().getTime() < expire) {}
+  var start = Date.now(), expire = start + ms;
+  while (Date.now() < expire) {}
   return;
 }
 
