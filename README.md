@@ -284,6 +284,42 @@ if (!box1.intersectsBox(box2)) { // Check if they collide
   	this.position.y -= 0.5;
 }
 ```
+
+**Object velocity and jumping:**
+```js
+let keysDown={}; // Array with pressed down keys
+let yVel = 0; // Assign y-axis velocity variable
+let jumping = false; // Jumping state boolean
+
+function keyDown(e){ keysDown[e.key]=true; } // Function to set key to true if it's held down
+function keyUp(e){ delete keysDown[e.key]; } // Function to delete key from array if it's released
+window.addEventListener( 'keydown', keyDown, false ); // Event listener to detect if a key is down
+window.addEventListener( 'keyup', keyUp, false ); // Event listener to detect if a key is released
+
+function update( event ) { // Main loop
+	const box1 = new THREE.Box3().setFromObject(this); // Create collision boxes
+	const box2 = new THREE.Box3().setFromObject(scene.getObjectByName('Plane')); // This could be any object, in this case, it's the floor
+	
+	if (box1.intersectsBox(box2) && !jumping) { // If NOT jumping and touching 'Plane'
+		yVel = 0; // Set velocity to 0
+	}
+	else if (!box1.intersectsBox(box2)) { // If not colliding with the ground
+  		yVel -= 0.01; // Add negative value to the velocity, will cause 'this' object to fall
+	}
+	this.position.y += yVel; // Set 'this' object's position to the velocity
+	if (box1.intersectsBox(box2) && keysDown[' ']) {yVel += 0.1; jumping = true;} // Jumping, only works if you're touching the ground
+	else {jumping = false;} // Change the jumping state boolean to false if you're not jumping anymore
+	if (keysDown['a']) {this.position.x -= 0.1;} // Move left if 'a' is held down
+	if (keysDown['d']) {this.position.x += 0.1;} // Move right if 'd' is held down
+	if (keysDown['w']) {this.position.z -= 0.1;} // Move forward if 'w' is held down
+	if (keysDown['s']) {this.position.z += 0.1;} // Move backward if 's' is held down
+	
+	camera.position.copy(this.position); // Set camera to 'this' object's position
+	camera.position.y += 15; // Add offset on 'y' axis
+	camera.position.z += 15; // Add offset on 'z' axis
+	camera.rotation.set(-0.75, 0, 0); // Set correct camera rotation
+}
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
