@@ -236,7 +236,7 @@ console.log(this); // Very simple, will output everything about the object that 
 
 **Rotate object:**
 ```js
-this.rotation.x += 0.01;
+this.rotation.x += 0.01; // In radians
 ```
 
 **Clone object:**
