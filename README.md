@@ -154,6 +154,12 @@ console.log(`Age is: ${age}`); // Using the ` to make strings, you can easily pa
 console.log("Age is: "+age);
 
 console.log("\n"); // The \n makes a 'new line', it can be put anywhere in a string
+
+// Input
+let input = prompt("Enter number: ");
+let ok = confirm("Do you agree?");
+if (ok) {/* code */} // if 'ok' is 'true', then the code inside the curly brackets will execute
+
 ```
 It is also recommended that you learn about JSON in Javascript, structure and how to use it.
 
