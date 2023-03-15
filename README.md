@@ -13,7 +13,7 @@ You may use `CTRL + F` to search on this site.
 
 MarsX is using Three.js and our modified version of their editor.
 Everything possible with Three.js is possible in the MarsX editor.
-Credit to the Three.js developers and community.
+<br />Credit to the Three.js developers and community.
 
 # Lifecycle methods
 ```js
