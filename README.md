@@ -239,6 +239,27 @@ console.log(this); // Very simple, will output everything about the object that 
 this.rotation.x += 0.01;
 ```
 # Examples
+**Smooth movement example, try it on a cube, capsule or similar:**
+```js
+let keysDown={}; // Array with pressed down keys
+
+function keyDown(e){ keysDown[e.key]=true; } // Function to set key to true if it's held down
+function keyUp(e){ delete keysDown[e.key]; } // Function to delete key from array if it's released
+window.addEventListener( 'keydown', keyDown, false ); // Event listener to detect if a key is down
+window.addEventListener( 'keyup', keyUp, false ); // Event listener to detect if a key is released
+
+function update( event ) { // Main loop
+	if (keysDown['a']) {this.position.x -= 0.1;} // Move left if 'a' is held down
+	if (keysDown['d']) {this.position.x += 0.1;} // Move right if 'd' is held down
+	if (keysDown['w']) {this.position.z -= 0.1;} // Move forward if 'w' is held down
+	if (keysDown['s']) {this.position.z += 0.1;} // Move backward if 's' is held down
+	
+	camera.position.copy(this.position); // Set camera to 'this' object's position
+	camera.position.y += 15; // Add offset on 'y' axis
+	camera.position.z += 15; // Add offset on 'z' axis
+	camera.rotation.set(-0.75, 0, 0); // Set correct camera rotation
+}
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
