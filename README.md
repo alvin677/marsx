@@ -260,6 +260,20 @@ function update( event ) { // Main loop
 	camera.rotation.set(-0.75, 0, 0); // Set correct camera rotation
 }
 ```
+
+**Collision detection:**
+```js
+function update( event ) { // Main loop
+	const box1 = new THREE.Box3().setFromObject(this); // Create collision boxes, required to be in the loop or they won't update
+	const box2 = new THREE.Box3().setFromObject(scene.getObjectByName('Plane')); // This could be any object, in this case, it's the floor
+	
+	if (box1.intersectsBox(box2)) { // Check if they collide
+  		console.log("collides"); // Do code
+	}
+	
+	this.position.y += 0.01; // Move 'this' object up 
+}
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
