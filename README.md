@@ -238,6 +238,13 @@ console.log(this); // Very simple, will output everything about the object that 
 ```js
 this.rotation.x += 0.01;
 ```
+
+**Clone object:**
+```js
+let objectClone = this.clone(); // Define clone variable as a clone of 'this' object
+objectClone.position.copy(this.position); // Set position to 'this' position
+scene.add(objectClone); // Add clone to the scene
+```
 # Examples
 **Smooth movement example, try it on a cube, capsule or similar:**
 ```js
