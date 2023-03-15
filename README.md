@@ -67,7 +67,7 @@ while (true) {} // While loops tend to freeze the application as they execute as
 // Statements
 if (boolVariable) {console.log("true");}
 if (10 > 5) {console.log("10 is greater than 5");}
-else if ("word" == "word") {}
+else if ("word" == "word") {} // == stands for 'equal to'
 else {console.log("else");}
 
 if (variable1 != variable2) {} // != stands for 'not equal to'
