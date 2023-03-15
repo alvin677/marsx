@@ -9,11 +9,11 @@ You may use `CTRL + F` to search on this site.
   https://www.freecodecamp.org/ <br />
   https://www.learn-js.org/ <br />
   
-  I also recommend using https://chat.openai.com/ with specific questions, you may refer to the 'Three.js editor' when asking questions for better answers.
+  Also recommended to use https://chat.openai.com/ with specific questions, you may refer to the 'Three.js editor' when asking questions for better answers.
 
 MarsX is using Three.js and our modified version of their editor.
 Everything possible with Three.js is possible in the MarsX editor.
-Credit to the Three.js community.
+Credit to the Three.js developers and community.
 
 # Lifecycle methods
 ```js
