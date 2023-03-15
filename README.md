@@ -234,6 +234,10 @@ for (let i = 0; i < scene.children.length; i++) {
 console.log(this); // Very simple, will output everything about the object that the script created on.
 ```
 
+**Rotate object:**
+```js
+this.rotation.x += 0.01;
+```
 # Examples
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
