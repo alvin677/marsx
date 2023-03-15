@@ -274,6 +274,16 @@ function update( event ) { // Main loop
 	this.position.y += 0.01; // Move 'this' object up 
 }
 ```
+
+**Adding simple gravity:**
+```js
+const box1 = new THREE.Box3().setFromObject(this); // Create collision boxes
+	const box2 = new THREE.Box3().setFromObject(scene.getObjectByName('Plane')); // This could be any object, in this case, it's the floor
+	
+	if (!box1.intersectsBox(box2)) { // Check if they collide
+  		this.position.y -= 0.5;
+	}
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
