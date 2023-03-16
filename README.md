@@ -353,8 +353,8 @@ yVelocity -= 0.01; // Add negative velocity, cause object to fall
 this.position.y += yVelocity; // Apply/update velocity to object's position (y)
 ```
 <br /><br /><br /><br /><br />
-# Three.js
-**Import and use an example addon (PointerLockControls.js in this example):**
+# Addons
+**Import and use a Three.js example addon (PointerLockControls.js in this example):**
 ```js
 function loadControls() { // Function
   const controls = new THREE.PointerLockControls(camera, document.body); // Addon code inside this function, in this case defining 'controls'
