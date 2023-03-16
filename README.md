@@ -356,15 +356,19 @@ this.position.y += yVelocity; // Apply/update velocity to object's position (y)
 # Three.js
 **Import and use an example addon:**
 ```js
-function init() {
- 	const controls = new THREE.PointerLockControls(camera, document.body);
-	controls.lock();
+function loadControls() { // Function
+  const controls = new THREE.PointerLockControls(camera, document.body); // Addon code inside this function, in this case defining 'controls'
+  controls.lock(); // Locking cursor
 }
 
-const controlsScript = document.createElement('script');
-controlsScript.src = 'https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/PointerLockControls.js';
-controlsScript.onload = init; // Call init() once the script is loaded
-document.head.appendChild(controlsScript);
+const controlsScript = document.createElement('script'); // Make script to import addon
+controlsScript.src = 'https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/PointerLockControls.js'; // Importing addon
+controlsScript.onload = loadControls; // Make sure it executes our code after successfully loading
+document.head.appendChild(controlsScript); // Add the script element to the document head (finishing initialization)
+
+function stop() {
+	controlsScript.remove(); // Getting rid of addon after stopped playing
+}
 ```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
 **CDN:** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/
