@@ -260,6 +260,7 @@ this.material.color.g = 255;
 ```js
 player.setCamera(this); // 'this' can be replaced with something such as scene.getObjectByName('newCamera');
 ```
+<br /><br /><br /><br /><br />
 # Examples
 **Smooth movement example, try it on a cube, capsule or similar:**
 ```js
