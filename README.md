@@ -366,7 +366,7 @@ controlsScript.src = 'https://cdn.jsdelivr.net/npm/three@0.131.2/examples/js/con
 controlsScript.onload = init; // Call init() once the script is loaded
 document.head.appendChild(controlsScript);
 ```
-**Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm
+**Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
 **CDN:** https://cdn.jsdelivr.net/npm/three@0.131.2/examples/js/
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
