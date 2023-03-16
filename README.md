@@ -255,6 +255,11 @@ this.material.color.setRGB(0, 255, 0);
 
 this.material.color.g = 255;
 ```
+
+**Switching camera:**
+```js
+player.setCamera(this); // 'this' can be replaced with something such as scene.getObjectByName('newCamera');
+```
 # Examples
 **Smooth movement example, try it on a cube, capsule or similar:**
 ```js
