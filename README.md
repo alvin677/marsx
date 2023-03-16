@@ -353,7 +353,7 @@ yVelocity -= 0.01; // Add negative velocity, cause object to fall
 this.position.y += yVelocity; // Apply/update velocity to object's position (y)
 ```
 <br /><br /><br /><br /><br />
-# Three.js
+# Three.js (0.147.0)
 **Import and use an example addon (PointerLockControls.js in this example):**
 ```js
 function loadControls() { // Function
@@ -371,7 +371,7 @@ function stop() {
 }
 ```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
-**CDN:** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/
+**CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
