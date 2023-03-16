@@ -353,7 +353,7 @@ yVelocity -= 0.01; // Add negative velocity, cause object to fall
 this.position.y += yVelocity; // Apply/update velocity to object's position (y)
 ```
 <br /><br /><br /><br /><br />
-#Three.js
+# Three.js
 **Import and use an example addon:**
 ```js
 function init() {
