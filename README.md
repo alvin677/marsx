@@ -372,7 +372,7 @@ function stop() {
 ```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
 **CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
-**Great website for additional javascript cdn:** https://cdnjs.com/
+**Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
