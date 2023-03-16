@@ -352,6 +352,20 @@ function update(event) {
 yVelocity -= 0.01; // Add negative velocity, cause object to fall
 this.position.y += yVelocity; // Apply/update velocity to object's position (y)
 ```
+<br /><br /><br /><br /><br />
+#Three.js
+**Import and use an example addon:**
+```js
+function init() {
+ 	const controls = new THREE.PointerLockControls(camera, document.body);
+	controls.lock();
+}
+
+const controlsScript = document.createElement('script');
+controlsScript.src = 'https://cdn.jsdelivr.net/npm/three@0.131.2/examples/js/controls/PointerLockControls.js';
+controlsScript.onload = init; // Call init() once the script is loaded
+document.head.appendChild(controlsScript);
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
