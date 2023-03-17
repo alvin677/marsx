@@ -392,7 +392,7 @@ function stop() {
 	controlsScript.remove(); // Getting rid of addon after stopped playing
 }
 ```
-**Cannon.js physics with three.js:**
+**Cannon.js physics with three.js:**<br />
 *This example imports the cannon.js library, however, MarsX automatically imports it into the editor now. The importing step of this example is unnecessary.**
 ```js
 const boxes = []; // Three.js boxes
