@@ -539,6 +539,7 @@ scene.add(cube2);
 ```
 # Physics
 **Apply physics to project, put in 'scene' script:**
+*Important notice: In the userData of each object, you must enter 2 parameters where one determine whether the object is anchored/unachored and the other the mass of the object! Example 1: [ "anchored", 100 ] Example 2: [ "unanchored", 10 ]
 ```js
 const timeStep = 1 / 60; // 60 FPS
 
@@ -551,22 +552,34 @@ function loadCannon() { // Function
 
 	// Loop through all objects in the scene
 	scene.children.forEach(function(object) {
-  	// Create a cannon.js body for the object
-  		const mass = 1;
-  		const shape = new CANNON.Box(new CANNON.Vec3(1, 1, 1));
-  		const body = new CANNON.Body({mass: mass});
-  		body.addShape(shape);
-  		body.position.copy(object.position);
-  		world.addBody(body);
+		
+		// Get the bounding box of the object
+		const box3 = new THREE.Box3().setFromObject(object);
+		const size = box3.getSize(new THREE.Vector3());
 
- 	 // Update the object's position and rotation every frame
-  		function update() {
-			if (object.userData != "anchored") {
-  			world.step(0.01)
-  			object.position.copy(body.position);
-  			object.quaternion.copy(body.quaternion);
-  			requestAnimationFrame(update);
-		}}
+		// Create a cannon.js body for the object
+		const mass = 1;
+		const shape = new CANNON.Box(new CANNON.Vec3(size.x / 2, size.y / 2, size.z / 2)); // Use the size of the bounding box to create the physics box
+		const body = new CANNON.Body({mass: object.userData[1] });
+		body.addShape(shape);
+		body.position.copy(object.position);
+		world.addBody(body);
+
+		// Set userData for the platform object
+		if (object.userData[0] === "anchored") {
+			body.mass = 1e9; // Set a large mass for the platform
+			body.type = CANNON.Body.STATIC; // Set the body type to static so it does not move
+		}
+
+		// Update the object's position and rotation every frame
+		function update() {
+			if (object.userData !== "anchored") { // Check if the object is anchored
+				world.step(timeStep);
+				object.position.copy(body.position);
+				object.quaternion.copy(body.quaternion);
+			}
+			requestAnimationFrame(update);
+		}
 		update();
 	});
 }
