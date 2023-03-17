@@ -260,6 +260,24 @@ this.material.color.g = 255;
 ```js
 player.setCamera(this); // 'this' can be replaced with something such as scene.getObjectByName('newCamera');
 ```
+
+**Create object:**
+```js
+// Create a new box geometry
+var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+
+// Create a new material
+var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+
+// Create a new mesh with the geometry and material
+var cube = new THREE.Mesh( geometry, material );
+
+// Set the position of the cube
+cube.position.set( 0, 0, 0 );
+
+// Add the cube to the scene
+scene.add( cube );
+```
 <br /><br /><br /><br /><br />
 # Examples
 **Smooth movement example, try it on a cube, capsule or similar:**
