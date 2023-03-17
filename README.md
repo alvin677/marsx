@@ -499,15 +499,34 @@ scene.children.forEach(function(object) {
         return;
     }
 
-    // Get the bounding box or bounding sphere of the object
+    // Get the bounding box, bounding sphere, or bounding cylinder of the object
     let shape;
     if (object.geometry.type === "BoxGeometry") {
-        const box3 = new THREE.Box3().setFromObject(object);
-        const size = box3.getSize(new THREE.Vector3());
-        shape = new CANNON.Box(new CANNON.Vec3(size.x / 2, size.y / 2, size.z / 2));
-    } else if (object.geometry.type === "SphereGeometry") {
+    const box3 = new THREE.Box3().setFromObject(object);
+    const size = box3.getSize(new THREE.Vector3());
+    const halfWidth = size.x / 2;
+    const halfHeight = size.y / 2;
+    const halfDepth = size.z / 2;
+    shape = new CANNON.Box(new CANNON.Vec3(halfWidth, halfHeight, halfDepth));
+    if (object.rotation) { // Check if the object has a rotation property
+        const rot = new THREE.Euler().setFromQuaternion(object.quaternion);
+        const halfSize = new THREE.Vector3(halfWidth, halfHeight, halfDepth);
+        halfSize.applyEuler(rot);
+        shape = new CANNON.Box(new CANNON.Vec3(halfSize.x, halfSize.y, halfSize.z));
+    }
+}
+ else if (object.geometry.type === "SphereGeometry") {
         const radius = object.geometry.parameters.radius;
         shape = new CANNON.Sphere(radius);
+    } else if (object.geometry.type === "CylinderGeometry") {
+        const radiusTop = object.geometry.parameters.radiusTop;
+        const radiusBottom = object.geometry.parameters.radiusBottom;
+        const height = object.geometry.parameters.height;
+        const segments = object.geometry.parameters.radialSegments;
+        shape = new CANNON.Cylinder(radiusTop, radiusBottom, height, segments);
+        if (object.rotation) { // Check if the object has a rotation property
+            object.rotation.x = Math.PI / 2; // Rotate the cylinder so that the axis is aligned correctly
+        }
     } else {
         console.warn("Unsupported geometry type:", object.geometry.type);
         return;
@@ -521,6 +540,7 @@ scene.children.forEach(function(object) {
     const body = new CANNON.Body({mass: mass});
     body.addShape(shape);
     body.position.copy(object.position);
+    body.quaternion.copy(object.quaternion);
     world.addBody(body);
     bodies.push(body);
 
