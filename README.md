@@ -38,6 +38,8 @@ Certain application components are accessible in the scope of scripts as variabl
 `camera` A reference to the application's camera. **Three.js**<br />
 `world` A reference to the cannon.js world. **Cannon.js**
 
+`editor` A reference to the editor, used in the web console (F12). **Three.js**
+
 # Miscellaneous
 Code outside of lifecycle and event listeners is immediately executed when the script is loaded. <br />
 The ```this``` reference can be used to refer to the 3D object which owns the script.
