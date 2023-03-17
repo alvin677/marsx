@@ -557,7 +557,8 @@ scene.children.forEach(function(object) {
 
     // Create a cannon.js body for the object
     const shape = new CANNON.Box(new CANNON.Vec3(size.x / 2, size.y / 2, size.z / 2)); // Use the size of the bounding box to create the physics box
-    const body = new CANNON.Body({mass: object.userData[1] });
+	if (typeof object.userData[1] !== "undefined") {mass = object.userData[1]} else {mass = 1;}
+    const body = new CANNON.Body({mass: mass });
     body.addShape(shape);
     body.position.copy(object.position);
     world.addBody(body);
