@@ -558,7 +558,6 @@ function loadCannon() { // Function
 		const size = box3.getSize(new THREE.Vector3());
 
 		// Create a cannon.js body for the object
-		const mass = 1;
 		const shape = new CANNON.Box(new CANNON.Vec3(size.x / 2, size.y / 2, size.z / 2)); // Use the size of the bounding box to create the physics box
 		const body = new CANNON.Body({mass: object.userData[1] });
 		body.addShape(shape);
