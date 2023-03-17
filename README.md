@@ -35,7 +35,8 @@ Certain application components are accessible in the scope of scripts as variabl
 `player` A reference to the application player (a wrapper component which executes the editor application). <br />
 `renderer` A reference to the renderer. <br />
 `scene` A reference to the scene graph. <br />
-`camera` A reference to the application's camera.
+`camera` A reference to the application's camera. <br />
+`world` A reference to the cannon.js world.
 
 # Miscellaneous
 Code outside of lifecycle and event listeners is immediately executed when the script is loaded. <br />
