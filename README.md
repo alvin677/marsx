@@ -544,52 +544,48 @@ scene.add(cube2);
 **Apply physics to project, put in 'scene' script:** <br />
 *Important notice: In the `User data` of each object, you must enter 2 parameters where as the first one determine whether the object is anchored/unachored and the second one the mass of the object! Example 1: `[ "anchored", 100 ]` Example 2: `[ "unanchored", 10 ]`*
 ```js
-const timeStep = 1 / 60; // 60 FPS
+world.broadphase = new CANNON.NaiveBroadphase();
 
-function loadCannon() { // Function
-	
-	// Set up the cannon.js world
-	const world = new CANNON.World();
-	world.gravity.set(0, -9.82, 0);
-	world.broadphase = new CANNON.NaiveBroadphase();
+let bodies = [];
 
-	// Loop through all objects in the scene
-	scene.children.forEach(function(object) {
-		
-		// Get the bounding box of the object
-		const box3 = new THREE.Box3().setFromObject(object);
-		const size = box3.getSize(new THREE.Vector3());
+// Loop through all objects in the scene
+scene.children.forEach(function(object) {
+    
+    // Get the bounding box of the object
+    const box3 = new THREE.Box3().setFromObject(object);
+    const size = box3.getSize(new THREE.Vector3());
 
-		// Create a cannon.js body for the object
-		const shape = new CANNON.Box(new CANNON.Vec3(size.x / 2, size.y / 2, size.z / 2)); // Use the size of the bounding box to create the physics box
-		const body = new CANNON.Body({mass: object.userData[1] });
-		body.addShape(shape);
-		body.position.copy(object.position);
-		world.addBody(body);
+    // Create a cannon.js body for the object
+    const shape = new CANNON.Box(new CANNON.Vec3(size.x / 2, size.y / 2, size.z / 2)); // Use the size of the bounding box to create the physics box
+    const body = new CANNON.Body({mass: object.userData[1] });
+    body.addShape(shape);
+    body.position.copy(object.position);
+    world.addBody(body);
+    bodies.push(body);
 
-		// Set userData for the platform object
-		if (object.userData[0] === "anchored") {
-			body.mass = 1e9; // Set a large mass for the platform
-			body.type = CANNON.Body.STATIC; // Set the body type to static so it does not move
-		}
+    // Set userData for the platform object
+    if (object.userData[0] === "anchored") {
+        body.mass = 1e9; // Set a large mass for the platform
+        body.type = CANNON.Body.STATIC; // Set the body type to static so it does not move
+    }
 
-		// Update the object's position and rotation every frame
-		function update() {
-			if (object.userData !== "anchored") { // Check if the object is anchored
-				world.step(timeStep);
-				object.position.copy(body.position);
-				object.quaternion.copy(body.quaternion);
-			}
-			requestAnimationFrame(update);
-		}
-		update();
-	});
+    // Update the object's position and rotation every frame
+    function update() {
+        if (object.userData !== "anchored") { // Check if the object is anchored
+            object.position.copy(body.position);
+            object.quaternion.copy(body.quaternion);
+        }
+        requestAnimationFrame(update);
+    }
+    update();
+});
+
+function stop() {
+    for (let i = 0; i < bodies.length; i++) {
+        world.remove(bodies[i]);
+    }
+    bodies = [];
 }
-
-const cannonScript = document.createElement('script'); // Make script to import addon
-cannonScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js'; // Importing addon
-cannonScript.onload = loadCannon; // Make sure it executes our code after successfully loading
-document.head.appendChild(cannonScript); // Add the script element to the document head (finishing initialization)
 ```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
 **CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
