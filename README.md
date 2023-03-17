@@ -374,6 +374,15 @@ function update(event) {
 yVelocity -= 0.01; // Add negative velocity, cause object to fall
 this.position.y += yVelocity; // Apply/update velocity to object's position (y)
 ```
+
+**2.5D camera angle:**
+```js
+function update( event ) {
+	camera.position.copy(this.position);
+	camera.position.x += 80;
+	camera.rotation.set(0, Math.PI/2, 0);
+}
+```
 <br /><br /><br /><br /><br />
 # Addons
 **Import and use a Three.js example addon (PointerLockControls.js in this example):**
