@@ -550,15 +550,31 @@ let bodies = [];
 
 // Loop through all objects in the scene
 scene.children.forEach(function(object) {
-    
-    // Get the bounding box of the object
-    const box3 = new THREE.Box3().setFromObject(object);
-    const size = box3.getSize(new THREE.Vector3());
+    // Check if the object has a geometry property
+    if (!object.geometry) {
+        return;
+    }
+
+    // Get the bounding box or bounding sphere of the object
+    let shape;
+    if (object.geometry.type === "BoxGeometry") {
+        const box3 = new THREE.Box3().setFromObject(object);
+        const size = box3.getSize(new THREE.Vector3());
+        shape = new CANNON.Box(new CANNON.Vec3(size.x / 2, size.y / 2, size.z / 2));
+    } else if (object.geometry.type === "SphereGeometry") {
+        const radius = object.geometry.parameters.radius;
+        shape = new CANNON.Sphere(radius);
+    } else {
+        console.warn("Unsupported geometry type:", object.geometry.type);
+        return;
+    }
 
     // Create a cannon.js body for the object
-    const shape = new CANNON.Box(new CANNON.Vec3(size.x / 2, size.y / 2, size.z / 2)); // Use the size of the bounding box to create the physics box
-	if (typeof object.userData[1] !== "undefined") {mass = object.userData[1]} else {mass = 1;}
-    const body = new CANNON.Body({mass: mass });
+    let mass = 1;
+    if (typeof object.userData[1] !== "undefined") {
+        mass = object.userData[1];
+    }
+    const body = new CANNON.Body({mass: mass});
     body.addShape(shape);
     body.position.copy(object.position);
     world.addBody(body);
