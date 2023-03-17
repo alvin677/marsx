@@ -478,6 +478,65 @@ cannonScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/canno
 cannonScript.onload = loadCannon; // Make sure it executes our code after successfully loading
 document.head.appendChild(cannonScript); // Add the script element to the document head (finishing initialization)
 ```
+**Apply physics to all code-created objects:**
+```js
+function loadCannon() { // Function
+	const world = new CANNON.World(); // Define cannon.js world
+	world.gravity.set(0, -9.82, 0); // Set world gravity -9.82m/s
+	
+	// Traverse the scene hierarchy and apply physics to each object
+	
+scene.traverse((object) => {
+  if (object instanceof THREE.Mesh) {
+    // Create a cannon.js body for the object
+    const shape = new CANNON.Box(new CANNON.Vec3(0.5, 0.5, 0.5));
+    const body = new CANNON.Body({
+      mass: 1,
+      position: new CANNON.Vec3(object.position.x, object.position.y, object.position.z),
+    });
+    body.addShape(shape);
+    world.addBody(body);
+
+    // Save a reference to the cannon.js body in the object's userData
+    object.userData.body = body;
+  }
+});
+
+// Start the render loop
+function animate() {
+  requestAnimationFrame(animate);
+
+  // Update physics
+  world.step(1 / 60);
+
+  // Update object positions
+  scene.traverse((object) => {
+    if (object instanceof THREE.Mesh && object.userData.body) {
+      object.position.copy(object.userData.body.position);
+      object.quaternion.copy(object.userData.body.quaternion);
+    }
+  });
+
+  // Render the scene
+  renderer.render(scene, camera);
+}
+
+animate();
+}
+
+const cannonScript = document.createElement('script'); // Make script to import addon
+cannonScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js'; // Importing addon
+cannonScript.onload = loadCannon; // Make sure it executes our code after successfully loading
+document.head.appendChild(cannonScript); // Add the script element to the document head (finishing initialization)
+
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+const cube2 = new THREE.Mesh(geometry, material);
+scene.add(cube2);
+```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
 **CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
 **Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
