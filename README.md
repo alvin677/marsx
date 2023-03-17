@@ -11,7 +11,8 @@ This is the official MarsX scripting documentation. MarsX uses Javascript to cre
 
 MarsX is using Three.js and our modified version of their editor.
 Everything possible with Three.js is possible in the MarsX editor.
-<br />Credit to the Three.js developers and community.
+Built in to the MarsX editor is also cannon.js.
+<br />Credit to the Three.js and cannon.js developers/community.
 
 # Lifecycle methods
 ```js
@@ -593,7 +594,7 @@ document.head.appendChild(cannonScript); // Add the script element to the docume
 **CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
 **Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
 <br /><br /><br />
-**Additional Three.js documentation can be found at: https://threejs.org/docs/** <br />
+**Additional Three.js and cannon.js documentation can be found at: https://threejs.org/docs/ and https://github.com/schteppe/cannon.js** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
 
 Contact me on Discord with suggestions (or open an issue): *Cedric#0591*
