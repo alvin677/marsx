@@ -561,7 +561,7 @@ function loadCannon() { // Function
 
  	 // Update the object's position and rotation every frame
   		function update() {
-			if (!object.anchored) {
+			if (object.userData != "anchored") {
   			world.step(0.01)
   			object.position.copy(body.position);
   			object.quaternion.copy(body.quaternion);
