@@ -370,6 +370,96 @@ function stop() {
 	controlsScript.remove(); // Getting rid of addon after stopped playing
 }
 ```
+**Cannon.js physics with three.js:**
+```js
+const boxes = []; // Three.js boxes
+const boxBodies = []; // Cannon.js bodies
+
+function loadCannon() { // Function
+	const world = new CANNON.World(); // Define cannon.js world
+	world.gravity.set(0, -9.82, 0); // Set world gravity -9.82m/s
+	
+	const platformGeometry = new THREE.BoxGeometry(10, 0.5, 10);
+	const platformMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
+	const platform = new THREE.Mesh(platformGeometry, platformMaterial);
+	scene.add(platform); // Creating the platform and adding it to the scene
+
+	const platformShape = new CANNON.Box(new CANNON.Vec3(5, 0.25, 5));
+	const platformBody = new CANNON.Body({ mass: 0 });
+	platformBody.addShape(platformShape);
+	world.addBody(platformBody); // Creating the body of the platform
+	
+	const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
+	const boxMaterial = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+	// Creating box base
+	
+	// Creating 100 boxes
+	for (let i = 0; i < 100; i++) {
+  		const box = new THREE.Mesh(boxGeometry, boxMaterial);
+  		box.position.set(Math.random() * 8 - 4, 5 + i * 2, Math.random() * 8 - 4);
+  		scene.add(box);
+  		boxes.push(box);
+
+  		const boxShape = new CANNON.Box(new CANNON.Vec3(0.5, 0.5, 0.5));
+  		const boxBody = new CANNON.Body({ mass: 1 });
+  		boxBody.addShape(boxShape);
+  		boxBody.position.copy(box.position);
+  		boxBodies.push(boxBody);
+  		world.addBody(boxBody);
+	}
+	
+	// Creating light
+	const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+	scene.add(ambientLight);
+
+	const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+	directionalLight.position.set(10, 20, 10);
+	scene.add(directionalLight);
+	
+	// Animate function
+	function animate() {
+  		requestAnimationFrame(animate);
+
+  		world.step(1 / 60);
+
+		// Updating boxes
+  		for (let i = 0; i < boxes.length; i++) {
+    		boxes[i].position.copy(boxBodies[i].position);
+    		boxes[i].quaternion.copy(boxBodies[i].quaternion);
+  		}
+
+  		renderer.render(scene, camera);
+	}
+
+	animate();
+	
+	
+	
+	// Clean up function
+	loadCannon.stop = function() {
+        // remove boxes from scene
+        for (let i = 0; i < boxes.length; i++) {
+            scene.remove(boxes[i]);
+        }
+        // remove box bodies from world
+        for (let i = 0; i < boxBodies.length; i++) {
+            world.remove(boxBodies[i]);
+        }
+        // reset boxes and boxBodies arrays
+        boxes.length = 0;
+        boxBodies.length = 0;
+    }
+}
+
+function stop() { // When the program stops, call the clean up function
+	loadCannon.stop();
+}
+
+const cannonScript = document.createElement('script'); // Make script to import addon
+cannonScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js'; // Importing addon
+cannonScript.onload = loadCannon; // Make sure it executes our code after successfully loading
+document.head.appendChild(cannonScript); // Add the script element to the document head (finishing initialization)
+```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
 **CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
 **Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
