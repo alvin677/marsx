@@ -538,8 +538,8 @@ const cube2 = new THREE.Mesh(geometry, material);
 scene.add(cube2);
 ```
 # Physics
-**Apply physics to project, put in 'scene' script:**
-*Important notice: In the userData of each object, you must enter 2 parameters where one determine whether the object is anchored/unachored and the other the mass of the object! Example 1: [ "anchored", 100 ] Example 2: [ "unanchored", 10 ]
+**Apply physics to project, put in 'scene' script:** <br />
+*Important notice: In the userData of each object, you must enter 2 parameters where one determine whether the object is anchored/unachored and the other the mass of the object! Example 1: [ "anchored", 100 ] Example 2: [ "unanchored", 10 ]*
 ```js
 const timeStep = 1 / 60; // 60 FPS
 
