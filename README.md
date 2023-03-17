@@ -525,7 +525,7 @@ scene.children.forEach(function(object) {
         const segments = object.geometry.parameters.radialSegments;
         shape = new CANNON.Cylinder(radiusTop, radiusBottom, height, segments);
         if (object.rotation) { // Check if the object has a rotation property
-            object.rotation.x = Math.PI / 2; // Rotate the cylinder so that the axis is aligned correctly
+            object.rotation.x = -Math.PI / 2; // Rotate the cylinder so that the axis is aligned correctly
         }
     } else {
         console.warn("Unsupported geometry type:", object.geometry.type);
