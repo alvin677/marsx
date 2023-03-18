@@ -32,15 +32,16 @@ It is also possible to implement event listeners for selected browser events. Th
 
 # Script variables
 Certain application components are accessible in the scope of scripts as variables: <br />
-`player` A reference to the application player (a wrapper component which executes the editor application). **Three.js**<br />
-`renderer` A reference to the renderer. **Three.js**<br />
-`scene` A reference to the scene graph. **Three.js**<br />
-`camera` A reference to the application's camera. **Three.js**<br />
+`player` A reference to the application player (a wrapper component which executes the editor application).<br />
+`renderer` A reference to the renderer.<br />
+`scene` A reference to the scene graph.<br />
+`camera` A reference to the application's camera.<br />
 
-`world` A reference to the cannon.js world. **Cannon.js**<br />
-`two` A reference to the two.js canvas. **Two.js**
+`THREE` A reference to the three.js library.<br />
+`world` A reference to the cannon.js world.<br />
+`two` A reference to the two.js canvas.
 
-`editor` A reference to the editor, used in the web console (F12). **Three.js**
+`editor` A reference to the editor, used in the web console (F12).
 
 # Miscellaneous
 Code outside of lifecycle and event listeners is immediately executed when the script is loaded. <br />
