@@ -574,6 +574,35 @@ function stop() {
   bodies = [];
 }
 ```
+
+**Applying force on an object's physical body:**
+*`this.body` can be used to refer to the cannon.js body of the object.*
+```js
+let keysDown = {}; // Array with pressed down keys
+
+// Creating the force and point variables to apply on the body of the object: 'this.body'
+var force = new CANNON.Vec3(0, 3000, 0); // The force is in the negative y-direction
+var point = new CANNON.Vec3(0, 0, 0); // Apply the force at the center of the body
+
+function keyDown(e) {
+  keysDown[e.key] = true;
+} // Function to set key to true if it's held down
+function keyUp(e) {
+  delete keysDown[e.key];
+} // Function to delete key from array if it's released
+window.addEventListener("keydown", keyDown, false); // Event listener to detect if a key is down
+window.addEventListener("keyup", keyUp, false); // Event listener to detect if a key is released
+
+function update(event) {
+  if (keysDown[" "]) { // If Spacebar is pressed
+    this.body.applyForce(force, point); // Applying force upwards
+  } 
+
+  camera.position.copy(this.body.position); // Set camera to body's position
+  camera.position.z += 40; // Add offset on 'z' axis
+  camera.rotation.set(0, 0, 0); // Set correct camera rotation
+}
+```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
 **CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
 **Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
