@@ -389,6 +389,10 @@ function update( event ) {
 ```
 <br /><br /><br /><br /><br />
 # Addons
+**Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
+**CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
+**Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
+
 **Import and use a Three.js example addon (PointerLockControls.js in this example):**
 ```js
 function loadControls() { // Function
@@ -613,8 +617,8 @@ function update(event) {
 }
 ```
 <br /><br /><br /><br /><br />
-# User Interface
-We are using two.js to draw user interface elements. For more information about two.js and what's possible with it, check here: https://github.com/jonobr1/two.js/ <br />
+# User Interface/2D
+We are using two.js to draw user interface/2 dimensional elements. For more information about two.js and what's possible with it, check here: https://github.com/jonobr1/two.js/ <br />
 `two` is a global variable to interact with the two.js library.
 
 **Create a rotating rectangle:**
@@ -624,11 +628,8 @@ two.bind('update', function() {
   rect.rotation += 0.01;
 });
 ```
-**Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
-**CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
-**Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
 <br /><br /><br />
-**Additional Three.js and cannon.js documentation can be found at: https://threejs.org/docs/** <br />
+**Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
 
 Contact me on Discord with suggestions (or open an issue): *Cedric#0591*
