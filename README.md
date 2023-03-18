@@ -608,6 +608,6 @@ function update(event) {
 **Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
 <br /><br /><br />
 **Additional Three.js and cannon.js documentation can be found at: https://threejs.org/docs/ and https://github.com/schteppe/cannon.js** <br />
-**Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)**
+**Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
 
 Contact me on Discord with suggestions (or open an issue): *Cedric#0591*
