@@ -498,7 +498,9 @@ document.head.appendChild(cannonScript); // Add the script element to the docume
 ```
 <br /><br /><br /><br /><br />
 # Physics
-**Apply physics to project, put in 'scene' script:** <br />
+For physics we are using cannon.js. More information about cannon.js and what's possible can be found at: https://github.com/schteppe/cannon.js
+
+**Apply physics to project, put in 'scene' script or add the physics directly through the Toolbox:** <br />
 *Important notice: In the `User data` of each object, you can enter 2 parameters (not mandatory, default would be anchored set to false and mass set to 1):  `anchored` and `mass` of the object! <br />Example 1: `{
   "anchored": true,
   "mass": 10000
@@ -610,11 +612,23 @@ function update(event) {
   camera.rotation.set(0, 0, 0); // Set correct camera rotation
 }
 ```
+<br /><br /><br /><br /><br />
+# User Interface
+We are using two.js to draw user interface elements. For more information about two.js and what's possible with it, check here: https://github.com/jonobr1/two.js/ <br />
+`two` is a global variable to interact with the two.js library.
+
+**Create a rotating rectangle:**
+```js
+var rect = two.makeRectangle(two.width / 2, two.height / 2, 50 ,50);
+two.bind('update', function() {
+  rect.rotation += 0.01;
+});
+```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
 **CDN (must be 0.147.0 or below):** https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/ <br />
 **Great websites for additional javascript cdn:** https://cdnjs.com/ and https://www.jsdelivr.com/
 <br /><br /><br />
-**Additional Three.js and cannon.js documentation can be found at: https://threejs.org/docs/ and https://github.com/schteppe/cannon.js** <br />
+**Additional Three.js and cannon.js documentation can be found at: https://threejs.org/docs/** <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
 
 Contact me on Discord with suggestions (or open an issue): *Cedric#0591*
