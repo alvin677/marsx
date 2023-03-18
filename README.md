@@ -42,7 +42,8 @@ Certain application components are accessible in the scope of scripts as variabl
 
 # Miscellaneous
 Code outside of lifecycle and event listeners is immediately executed when the script is loaded. <br />
-The ```this``` reference can be used to refer to the 3D object which owns the script.
+The ```this``` reference can be used to refer to the 3D object which owns the script. <br />
+To refer to the physical body, you may use `this.body`.
 
 <br /><br /><br /><br /><br />
 # Scripting Guide
