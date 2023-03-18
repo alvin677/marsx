@@ -550,15 +550,15 @@ scene.children.forEach(object => {
   body.quaternion.copy(object.quaternion);
   world.addBody(body);
   bodies.push(body);
+  object.body = body;
 
   if (object.userData[0] === "anchored") {
     body.mass = 1e9;
     body.type = CANNON.Body.STATIC;
   }
-
-// Update the object's position and rotation every frame
+	
     function update() {
-        if (object.userData !== "anchored") { // Check if the object is anchored
+        if (object.userData !== "anchored") {
             object.position.copy(body.position);
             object.quaternion.copy(body.quaternion);
         }
@@ -568,10 +568,10 @@ scene.children.forEach(object => {
 });
 
 function stop() {
-    for (let i = 0; i < bodies.length; i++) {
-        world.remove(bodies[i]);
-    }
-    bodies = [];
+  for (let i = 0; i < bodies.length; i++) {
+    world.remove(bodies[i]);
+  }
+  bodies = [];
 }
 ```
 **Three.js Github Addons:** https://github.com/mrdoob/three.js/tree/dev/examples/jsm <br />
