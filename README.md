@@ -629,6 +629,13 @@ function update() {
   rect.rotation += 0.01;
 }
 ```
+
+**Change color:**
+```js
+var rect = two.makeRectangle(100, 100, 50, 50);
+rect.fill = 'rgb(255, 100, 100)';
+rect.noStroke();
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
