@@ -7,7 +7,7 @@ This is the official MarsX scripting documentation. MarsX uses Javascript to cre
   https://www.freecodecamp.org/ <br />
   https://www.learn-js.org/ <br />
   
-  Also recommended to use https://chat.openai.com/ with specific questions, you may refer to the 'Three.js editor' when asking questions for better answers.
+  Also recommended to use https://chat.openai.com/ with specific questions, you could refer to the words 'Three.js editor' when asking questions for better answers.
 
 MarsX is using Three.js and our modified version of their editor.
 Everything possible with Three.js is possible in the MarsX editor.
