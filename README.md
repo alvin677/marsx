@@ -53,6 +53,7 @@ It is recommended to have the Developer Console open when working on a project. 
 **A list of useful Javascript keywords/code:**
 ```js
 // Creating variables
+globalVariable = null; // create a global variable, can be modified later
 let integerVariable = 10; // integer (add decimal to make float)
 var boolVariable = true; // boolean
 const stringVariable = "string"; // string
