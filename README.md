@@ -37,7 +37,7 @@ Certain application components are accessible in the scope of scripts as variabl
 `scene` A reference to the scene graph. **Three.js**<br />
 `camera` A reference to the application's camera. **Three.js**<br />
 
-`world` A reference to the cannon.js world. **Cannon.js**
+`world` A reference to the cannon.js world. **Cannon.js**<br />
 `two` A reference to the two.js canvas. **Two.js**
 
 `editor` A reference to the editor, used in the web console (F12). **Three.js**
