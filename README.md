@@ -625,9 +625,9 @@ We are using two.js to draw user interface/2 dimensional elements. For more info
 **Create a rotating rectangle:**
 ```js
 var rect = two.makeRectangle(two.width / 2, two.height / 2, 50 ,50);
-two.bind('update', function() {
+function update() {
   rect.rotation += 0.01;
-});
+}
 ```
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
