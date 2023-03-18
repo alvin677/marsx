@@ -498,68 +498,65 @@ document.head.appendChild(cannonScript); // Add the script element to the docume
 *Important notice: In the `User data` of each object, you must enter 2 parameters where as the first one determine whether the object is `anchored` and the second one the `mass` of the object! <br />Example 1: `[ "anchored", 100 ]` Example 2: `[ "", 10 ]`* <br />*Remember that objects such as platforms want a high mass to prevent objects from clipping through*
 ```js
 world.broadphase = new CANNON.NaiveBroadphase();
-
 let bodies = [];
 
-// Loop through all objects in the scene
-scene.children.forEach(function(object) {
-    // Check if the object has a geometry property
-    if (!object.geometry) {
-        return;
-    }
+scene.children.forEach(object => {
+  if (!object.geometry) return;
 
-    // Get the bounding box, bounding sphere, or bounding cylinder of the object
-    let shape;
-    if (object.geometry.type === "BoxGeometry") {
+  let shape;
+  if (object.geometry.type === "BoxGeometry") {
     const box3 = new THREE.Box3().setFromObject(object);
     const size = box3.getSize(new THREE.Vector3());
     const halfWidth = size.x / 2;
     const halfHeight = size.y / 2;
     const halfDepth = size.z / 2;
     shape = new CANNON.Box(new CANNON.Vec3(halfWidth, halfHeight, halfDepth));
-    if (object.rotation) { // Check if the object has a rotation property
-        const rot = new THREE.Euler().setFromQuaternion(object.quaternion);
-        const halfSize = new THREE.Vector3(halfWidth, halfHeight, halfDepth);
-        halfSize.applyEuler(rot);
-        shape = new CANNON.Box(new CANNON.Vec3(halfSize.x, halfSize.y, halfSize.z));
+    if (object.rotation) {
+      const rot = new THREE.Euler().setFromQuaternion(object.quaternion);
+      const halfSize = new THREE.Vector3(halfWidth, halfHeight, halfDepth);
+      halfSize.applyEuler(rot);
+      shape = new CANNON.Box(new CANNON.Vec3(halfSize.x, halfSize.y, halfSize.z));
     }
-}
- else if (object.geometry.type === "SphereGeometry") {
-        const radius = object.geometry.parameters.radius;
-        shape = new CANNON.Sphere(radius);
-    } else if (object.geometry.type === "CylinderGeometry") {
-        const radiusTop = object.geometry.parameters.radiusTop;
-        const radiusBottom = object.geometry.parameters.radiusBottom;
-        const height = object.geometry.parameters.height;
-        const segments = object.geometry.parameters.radialSegments;
-        shape = new CANNON.Cylinder(radiusTop, radiusBottom, height, segments);
-        if (object.rotation) { // Check if the object has a rotation property
-            object.rotation.x = -Math.PI / 2; // Rotate the cylinder so that the axis is aligned correctly
-        }
-    } else {
-        console.warn("Unsupported geometry type:", object.geometry.type);
-        return;
+  } else if (object.geometry.type === "SphereGeometry") {
+    const radius = object.geometry.parameters.radius;
+    shape = new CANNON.Sphere(radius);
+    if (object.scale) shape.radius *= Math.max(object.scale.x, object.scale.y, object.scale.z);
+  } else if (object.geometry.type === "CylinderGeometry") {
+    const radiusTop = object.geometry.parameters.radiusTop;
+    const radiusBottom = object.geometry.parameters.radiusBottom;
+    const height = object.geometry.parameters.height;
+    const radius = Math.max(radiusTop, radiusBottom);
+    const halfHeight = height / 2;
+    shape = new CANNON.Cylinder(radius, radius, height, 16);
+    const quat = new CANNON.Quaternion();
+    quat.setFromAxisAngle(new CANNON.Vec3(1, 0, 0), -Math.PI / 2);
+    shape.transformAllPoints(new CANNON.Vec3(), quat);
+    if (object.scale) {
+      shape.radiusTop *= Math.max(object.scale.x, object.scale.z);
+      shape.radiusBottom *= Math.max(object.scale.x, object.scale.z);
+      shape.height *= object.scale.y;
     }
+  } else {
+    console.warn("Unsupported geometry type:", object.geometry.type);
+    return;
+  }
 
-    // Create a cannon.js body for the object
-    let mass = 1;
-    if (typeof object.userData[1] !== "undefined") {
-        mass = object.userData[1];
-    }
-    const body = new CANNON.Body({mass: mass});
-    body.addShape(shape);
-    body.position.copy(object.position);
-    body.quaternion.copy(object.quaternion);
-    world.addBody(body);
-    bodies.push(body);
+  let mass = 1;
+  if (typeof object.userData[1] !== "undefined") mass = object.userData[1];
+  const body = new CANNON.Body({mass});
+  if (shape.type === CANNON.Shape.types.CYLINDER) shape.centerOfMass = new CANNON.Vec3(0, -shape.height / 2, 0);
+  body.addShape(shape);
+  body.position.copy(object.position);
+  body.quaternion.copy(object.quaternion);
+  world.addBody(body);
+  bodies.push(body);
 
-    // Set userData for the platform object
-    if (object.userData[0] === "anchored") {
-        body.mass = 1e9; // Set a large mass for the platform
-        body.type = CANNON.Body.STATIC; // Set the body type to static so it does not move
-    }
+  if (object.userData[0] === "anchored") {
+    body.mass = 1e9;
+    body.type = CANNON.Body.STATIC;
+  }
 
-    // Update the object's position and rotation every frame
+// Update the object's position and rotation every frame
     function update() {
         if (object.userData !== "anchored") { // Check if the object is anchored
             object.position.copy(body.position);
