@@ -496,7 +496,10 @@ document.head.appendChild(cannonScript); // Add the script element to the docume
 <br /><br /><br /><br /><br />
 # Physics
 **Apply physics to project, put in 'scene' script:** <br />
-*Important notice: In the `User data` of each object, you must enter 2 parameters where as the first one determine whether the object is `anchored` and the second one the `mass` of the object! <br />Example 1: `[ "anchored", 100 ]` Example 2: `[ "", 10 ]`* <br />*Remember that objects such as platforms want a high mass to prevent objects from clipping through.*
+*Important notice: In the `User data` of each object, you can enter 2 parameters (not mandatory, default would be anchored set to false and mass set to 1):  `anchored` and `mass` of the object! <br />Example 1: `{
+  "anchored": true,
+  "mass": 10000
+}` Example 2: `{}`* <br />*Remember that objects such as platforms want a high mass to prevent objects from clipping through.*
 ```js
 world.broadphase = new CANNON.NaiveBroadphase();
 let bodies = [];
