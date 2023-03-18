@@ -546,7 +546,7 @@ scene.children.forEach(object => {
   }
 
   let mass = 1;
-  if (typeof object.userData[1] !== "undefined") mass = object.userData[1];
+  if (typeof object.userData["mass"] !== "undefined") mass = object.userData["mass"];
   const body = new CANNON.Body({mass});
   if (shape.type === CANNON.Shape.types.CYLINDER) shape.centerOfMass = new CANNON.Vec3(0, -shape.height / 2, 0);
   body.addShape(shape);
@@ -556,7 +556,7 @@ scene.children.forEach(object => {
   bodies.push(body);
   object.body = body;
 
-  if (object.userData[0] === "anchored") {
+  if (object.userData["anchored"] == true) {
     body.mass = 1e9;
     body.type = CANNON.Body.STATIC;
   }
