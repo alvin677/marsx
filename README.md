@@ -664,6 +664,25 @@ rect._renderer.elem.addEventListener('click', function() {
 	console.log("Rect was clicked.")
 }, false);
 ```
+
+**Text and counter:**
+```js
+// Create a text object
+var counter = two.makeText("0", two.width / 2, two.height / 2);
+
+// Set the font size, alignment and color
+counter.size = 80;
+counter.alignment = "center";
+counter.fill = "lime";
+
+// Initialize the counter value
+var count = 0;
+
+function update() {
+  counter.value = count.toString(); // Set the value to the variable 'count' but string converted
+  count++; // Add 1 to the value
+}
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
