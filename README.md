@@ -509,7 +509,7 @@ For physics we are using cannon.js. More information about cannon.js and what's 
 *Important notice: In the `User data` of each object, you can enter 2 parameters (not mandatory, default would be anchored set to false and mass set to 1):  `anchored` and `mass` of the object! <br />Example 1: `{
   "anchored": true,
   "mass": 10000
-}` Example 2: `{}`* <br />*Remember that objects such as platforms want a high mass to prevent objects from clipping through.*
+}` Example 2: `{}`* <br />*Remember that objects such as platforms want a high mass to prevent objects from clipping through.*<br />`world` is a global variable to refer to the cannon.js world and `this.body` can be used to refer to the current object's physical cannon.js body
 ```js
 world.broadphase = new CANNON.NaiveBroadphase();
 let bodies = [];
