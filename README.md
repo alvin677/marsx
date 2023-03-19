@@ -536,21 +536,29 @@ scene.children.forEach(object => {
     shape = new CANNON.Sphere(radius);
     if (object.scale) shape.radius *= Math.max(object.scale.x, object.scale.y, object.scale.z);
   } else if (object.geometry.type === "CylinderGeometry") {
-    const radiusTop = object.geometry.parameters.radiusTop;
-    const radiusBottom = object.geometry.parameters.radiusBottom;
-    const height = object.geometry.parameters.height;
-    const radius = Math.max(radiusTop, radiusBottom);
-    const halfHeight = height / 2;
-    shape = new CANNON.Cylinder(radius, radius, height, 16);
-    const quat = new CANNON.Quaternion();
-    quat.setFromAxisAngle(new CANNON.Vec3(1, 0, 0), -Math.PI / 2);
-    shape.transformAllPoints(new CANNON.Vec3(), quat);
-    if (object.scale) {
-      shape.radiusTop *= Math.max(object.scale.x, object.scale.z);
-      shape.radiusBottom *= Math.max(object.scale.x, object.scale.z);
-      shape.height *= object.scale.y;
-    }
-  } else {
+  const radiusTop = object.geometry.parameters.radiusTop;
+  const radiusBottom = object.geometry.parameters.radiusBottom;
+  const height = object.geometry.parameters.height;
+
+  object.updateMatrixWorld();
+  const boundingBox = new THREE.Box3().setFromObject(object);
+  const size = boundingBox.getSize(new THREE.Vector3());
+  const scaleFactor = Math.max(...object.scale.toArray());
+  const halfHeight = height / 2 * scaleFactor;
+  const radius = Math.max(radiusTop, radiusBottom) * scaleFactor;
+  
+  shape = new CANNON.Cylinder(radius, radius, halfHeight, 16);
+  const quat = new CANNON.Quaternion();
+  quat.setFromAxisAngle(new CANNON.Vec3(1, 0, 0), -Math.PI / 2);
+  shape.transformAllPoints(new CANNON.Vec3(), quat);
+
+  if (object.scale) {
+    shape.radiusTop *= scaleFactor;
+    shape.radiusBottom *= scaleFactor;
+    shape.height *= scaleFactor;
+  }
+
+} else {
     console.warn("Unsupported geometry type:", object.geometry.type);
     return;
   }
