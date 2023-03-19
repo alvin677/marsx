@@ -683,6 +683,13 @@ function update() {
   count++; // Add 1 to the value
 }
 ```
+
+**Load image/texture:**
+```js
+const texture = new Two.Texture('https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg');
+const image = two.makeSprite(texture);
+image.translation.set(two.width / 2, two.height / 2);
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
