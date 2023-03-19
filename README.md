@@ -652,6 +652,18 @@ function update() {
   	rect.translation.y += 1;
 }
 ```
+
+**Detect when shape is clicked on:**
+```js
+var rect = two.makeRectangle(100, 100, 50, 50);
+rect.fill = 'rgb(255, 100, 100)';
+rect.noStroke();
+two.update(); // Important to update or it won't work
+
+rect._renderer.elem.addEventListener('click', function() {
+	console.log("Rect was clicked.")
+}, false);
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
