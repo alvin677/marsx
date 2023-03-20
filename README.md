@@ -700,9 +700,11 @@ Shaders can be found at: https://www.shadertoy.com/ <br />
 Select and object and head over to the Material tab and from there you want to set the type to SHADERMATERIAL.
 On the program row, you can now set INFO, VERT and FRAG (information, vertices and color).
 
+Shaders are written in GLSL (OpenGL Shaders Language)
+
 An examples from Three.js on an Icosahedron mesh:
 **INFO:**
-```js
+```json
 {
 	"defines": {},
 	"uniforms": {
@@ -714,7 +716,7 @@ An examples from Three.js on an Icosahedron mesh:
 ```
 
 **VERT:**
-```js
+```glsl
 uniform float time;
 varying vec3 vPosition;
 void main() {
@@ -726,7 +728,7 @@ void main() {
 ```
 
 **FRAG:**
-```js
+```glsl
 varying vec3 vPosition;
 void main() {
 	gl_FragColor = vec4( vPosition * 2.0, 1.0 );
