@@ -694,7 +694,7 @@ image.translation.set(two.width / 2, two.height / 2);
 ```
 <br /><br /><br /><br /><br />
 # Shaders
-Shaders can be found at: https://www.shadertoy.com/
+Shaders can be found at: https://www.shadertoy.com/ <br />
 Select and object and head over to the material tab and from there you want to set the type to SHADERMATERIAL.
 On the program row, you can now set INFO, VERT and FRAG (information, vertices and color).
 
