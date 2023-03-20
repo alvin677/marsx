@@ -695,11 +695,10 @@ image.translation.set(two.width / 2, two.height / 2);
 <br /><br /><br /><br /><br />
 # Shaders
 Shaders can be found at: https://www.shadertoy.com/ <br />
-Select and object and head over to the material tab and from there you want to set the type to SHADERMATERIAL.
+Select and object and head over to the Material tab and from there you want to set the type to SHADERMATERIAL.
 On the program row, you can now set INFO, VERT and FRAG (information, vertices and color).
 
 An examples from Three.js on an Icosahedron mesh:
-
 **INFO:**
 ```js
 {
@@ -738,6 +737,7 @@ function update( event ) {
 	this.material.uniforms.time.value = event.time / 500.0;
 }
 ```
+Don't forget to set the detail under the Geometry tab to something high such as 24.
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
