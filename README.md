@@ -692,6 +692,52 @@ const texture = new Two.Texture('https://upload.wikimedia.org/wikipedia/commons/
 const image = two.makeSprite(texture);
 image.translation.set(two.width / 2, two.height / 2);
 ```
+<br /><br /><br /><br /><br />
+# Shaders
+Shaders can be found at: https://www.shadertoy.com/
+Select and object and head over to the material tab and from there you want to set the type to SHADERMATERIAL.
+On the program row, you can now set INFO, VERT and FRAG (information, vertices and color).
+
+An examples from Three.js on an Icosahedron mesh:
+
+**INFO:**
+```js
+{
+	"defines": {},
+	"uniforms": {
+		"time": {
+			"value": 0
+		}
+	}
+}
+```
+
+**VERT:**
+```js
+uniform float time;
+varying vec3 vPosition;
+void main() {
+	vPosition = position;
+	vPosition.x += sin( time + vPosition.z * 4.0 ) / 4.0;
+	vPosition.y += cos( time + vPosition.z * 4.0 ) / 4.0;
+	gl_Position = projectionMatrix * modelViewMatrix * vec4( vPosition, 1.0 );
+}
+```
+
+**FRAG:**
+```js
+varying vec3 vPosition;
+void main() {
+	gl_FragColor = vec4( vPosition * 2.0, 1.0 );
+}
+```
+
+**SCRIPT:**
+```js
+function update( event ) {
+	this.material.uniforms.time.value = event.time / 500.0;
+}
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
