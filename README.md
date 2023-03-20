@@ -631,9 +631,10 @@ function update(event) {
 ```
 <br /><br /><br /><br /><br />
 # User Interface/2D
-We are using two.js to draw user interface/2 dimensional elements. For more information about two.js and what's possible with it, check here: https://github.com/jonobr1/two.js/ <br />
+We have included two.js to easily draw user interface/2 dimensional elements. For more information about two.js and what's possible with it, check here: https://github.com/jonobr1/two.js/ <br /> You are not required to use it, you may import another library, use a canvas or use html/css to create buttons and inputboxes. It is all up to you<br />
 `two` is a global variable to interact with the two.js library.
 
+Below is a few examples on two.js
 **Create a rotating rectangle:**
 ```js
 var rect = two.makeRectangle(two.width / 2, two.height / 2, 50 ,50);
