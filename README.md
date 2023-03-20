@@ -513,6 +513,8 @@ For physics we are using cannon.js. More information about cannon.js and what's 
   "mass": 10000
 }` Example 2: `{}`* <br />*Remember that objects such as platforms want a high mass to prevent objects from clipping through.*<br />`world` is a global variable to refer to the cannon.js world and `this.body` can be used to refer to the current object's physical cannon.js body
 ```js
+// This took a while to make - Cedric
+
 world.broadphase = new CANNON.NaiveBroadphase();
 let bodies = [];
 
