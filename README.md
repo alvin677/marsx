@@ -743,6 +743,7 @@ function update( event ) {
 	this.material.uniforms.time.value = event.time / 500.0;
 }
 ```
+Don't forget to set the detail under the Geometry tab to something high such as 24.
 <br /><br /><br /><br /><br />
 # Audio
 ```js
@@ -763,7 +764,6 @@ audioLoader.load('https://jonhosting.com/SWC/files/audio/snd_coin.mp3', function
   sound.play();
 });
 ```
-Don't forget to set the detail under the Geometry tab to something high such as 24.
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
