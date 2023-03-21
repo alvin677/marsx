@@ -743,6 +743,25 @@ function update( event ) {
 	this.material.uniforms.time.value = event.time / 500.0;
 }
 ```
+# Audio
+```js
+// Create an AudioListener and add it to the camera
+const listener = new THREE.AudioListener();
+camera.add(listener);
+
+// Load an audio file
+const audioLoader = new THREE.AudioLoader();
+audioLoader.load('https://jonhosting.com/SWC/files/audio/snd_coin.mp3', function(buffer) {
+  // Create an Audio object and add it to the listener
+  const sound = new THREE.Audio(listener);
+  sound.setBuffer(buffer);
+  sound.setLoop(false); // Set to true if you want the audio to loop
+  sound.setVolume(1.0); // Set the volume (0.0 to 1.0)
+  
+  // Play the audio
+  sound.play();
+});
+```
 Don't forget to set the detail under the Geometry tab to something high such as 24.
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
