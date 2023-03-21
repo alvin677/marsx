@@ -7,7 +7,8 @@ This is the official MarsX scripting documentation. MarsX uses Javascript to cre
   https://www.freecodecamp.org/ <br />
   https://www.learn-js.org/ <br />
   
-  https://codepen.io/ for tons of code examples
+  https://codepen.io/ for tons of code examples <br />
+  https://developer.mozilla.org/ for great documentation and examples
   
   Also recommended to use https://chat.openai.com/ with specific questions, you could refer to the words 'Three.js editor' when asking questions for better answers.
 
