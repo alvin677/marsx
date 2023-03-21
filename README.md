@@ -703,7 +703,7 @@ On the program row, you can now set INFO, VERT and FRAG (information, vertices a
 
 Shaders are written in GLSL (OpenGL Shaders Language)
 
-An examples from Three.js on an Icosahedron mesh:
+An examples from Three.js on an Icosahedron mesh: <br />
 **INFO:**
 ```json
 {
