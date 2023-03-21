@@ -764,6 +764,61 @@ audioLoader.load('https://jonhosting.com/SWC/files/audio/snd_coin.mp3', function
   sound.play();
 });
 ```
+<br /><br /><br /><br /><br />
+# Virtual Reality
+```js
+let controller1, controller2;
+
+function init() {
+  // Create the left and right controllers
+  controller1 = renderer.xr.getController( 0 );
+  controller1.addEventListener( 'selectstart', onSelectStart );
+  controller1.addEventListener( 'selectend', onSelectEnd );
+  controller1.addEventListener( 'axeschange', onLeftStickChanged );
+  scene.add( controller1 );
+
+  controller2 = renderer.xr.getController( 1 );
+  controller2.addEventListener( 'selectstart', onSelectStart );
+  controller2.addEventListener( 'selectend', onSelectEnd );
+  scene.add( controller2 );
+
+  // Create the hand meshes and add them to the controllers
+  const hand1 = new THREE.Mesh( new THREE.SphereBufferGeometry( 0.05, 32, 32 ), new THREE.MeshStandardMaterial() );
+  //hand1.position.set( -0.1, -0.1, -0.2 );A
+  controller1.add( hand1 );
+
+  const hand2 = new THREE.Mesh( new THREE.SphereBufferGeometry( 0.05, 32, 32 ), new THREE.MeshStandardMaterial() );
+  //hand2.position.set( 0.1, -0.1, -0.2 );
+  controller2.add( hand2 );
+}
+				
+function onSelectStart() {
+  // Handle select start event
+}
+
+function onSelectEnd() {
+  // Handle select end event
+}
+
+function animate() {
+  renderer.setAnimationLoop( render );
+}
+
+function render() {
+  // Update the hand meshes positions and rotations based on the controllers' positions and rotations
+  hand1.position.copy( controller1.position );
+  hand1.quaternion.copy( controller1.quaternion );
+
+  hand2.position.copy( controller2.position );
+  hand2.quaternion.copy( controller2.quaternion );
+
+  renderer.render( scene, camera );
+}
+
+
+init()
+animate();
+```
 <br /><br /><br />
 **Additional Three.js documentation can be found at:** https://threejs.org/docs/ <br />
 **Ask questions on MarsF: https://ullblocks.jonhosting.com/forums/ (currently under development)** <br /> **Or you can join our Discord server: https://discord.gg/s78zWvwV6d**
