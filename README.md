@@ -743,6 +743,7 @@ function update( event ) {
 	this.material.uniforms.time.value = event.time / 500.0;
 }
 ```
+<br /><br /><br /><br /><br />
 # Audio
 ```js
 // Create an AudioListener and add it to the camera
