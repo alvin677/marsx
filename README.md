@@ -414,7 +414,7 @@ function stop() {
 }
 ```
 **Cannon.js physics with three.js:**<br />
-*This example imports the cannon.js library, however, MarsX automatically imports it into the editor now. The importing step of this example is unnecessary.**
+*This example imports the cannon.js library, however, MarsX automatically imports it into the editor now. The importing step of this example is unnecessary.*
 ```js
 const boxes = []; // Three.js boxes
 const boxBodies = []; // Cannon.js bodies
