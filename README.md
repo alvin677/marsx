@@ -635,7 +635,7 @@ function update(event) {
 ```js
 function init( event ) {
 	var axis = new CANNON.Vec3(0,0,1);
-	this.body.quaternion.setFromAxisAngle(axis, Math.PI/2 /*rotation here*/);
+	this.body.quaternion.setFromAxisAngle(axis, Math.PI/2);
 }
 ```
 <br /><br /><br /><br /><br />
