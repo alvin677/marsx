@@ -630,6 +630,14 @@ function update(event) {
   camera.rotation.set(0, 0, 0); // Set correct camera rotation
 }
 ```
+
+**Rotate physical body:**
+```js
+function init( event ) {
+	var axis = new CANNON.Vec3(0,0,1);
+	this.body.quaternion.setFromAxisAngle(axis, Math.PI/2 /*rotation here*/);
+}
+```
 <br /><br /><br /><br /><br />
 # User Interface/2D
 We have included two.js to easily draw user interface/2 dimensional elements. For more information about two.js and what's possible with it, check here: https://github.com/jonobr1/two.js/ <br /> You are not required to use it, you may import another library, use a canvas or use html/css to create buttons and inputboxes. It is all up to you<br />
